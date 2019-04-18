@@ -60,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
             // No explanation needed; request the permission
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_LOCATION);
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},                    MY_PERMISSIONS_REQUEST_LOCATION);
 
             return;
         }
@@ -85,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             case ConnectionResult.SERVICE_MISSING:
             case ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED:
             case ConnectionResult.SERVICE_DISABLED:
-                GoogleApiAvailability.getInstance().getErrorDialog(this,googlePlayServicesAvailable,101);
+                GoogleApiAvailability.getInstance().getErrorDialog(this,googlePlayServicesAvailable,101).show();
                 break;
             case ConnectionResult.SUCCESS:
                 getLastLocation();
